@@ -1,3 +1,4 @@
+// exercise 1
 // let a = 1;
 
 // for (let i = 0; i < 10; i++) {
@@ -7,6 +8,7 @@
 
 
 
+// exercise 2
 // let a = 10;
 // while (a > 0) {
 //   console.log(a)
@@ -15,6 +17,7 @@
 
 
 
+// exercise 3
 // let me = {
 //   name:"Akhtar",
 //   age:19,
@@ -29,6 +32,7 @@
 
 
 
+// exercise 4
 // let me = "Akhtar";
 
 // for (const element of me) {
