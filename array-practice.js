@@ -147,6 +147,8 @@
 
 
 
+
+
 // let marks = [91, 45, 72, 33, 88, 59];
 
 // function checkResult(mark){
@@ -168,6 +170,9 @@
 //   let result = checkResult(marks[i])
 //   console.log(marks[i],result)
 // }
+
+
+
 
 
 
@@ -195,6 +200,8 @@
 // console.log("salary:",employee.salary)
 // console.log("department:",employee.department)
 // console.log("result:",result)
+
+
 
 
 
@@ -228,36 +235,119 @@
 
 
 
-let scores = [45, 82, 67, 29, 91, 54];
-let lessThan40 = 0
-let sum60 = 0
 
- function checkResult(score){
-  if(score>=40){
-    return "pass"
+
+
+// let scores = [45, 82, 67, 29, 91, 54];
+// let lessThan40 = 0
+// let sum60 = 0
+
+//  function checkResult(score){
+//   if(score>=40){
+//     return "pass"
+//   }
+//   else{
+//     return "fail"
+//   }
+// }
+
+// for (let i = 0; i < scores.length; i++) {
+//   console.log(scores[i])
+
+//   if(scores[i]<40){
+//     lessThan40=lessThan40+1
+//   }
+
+//   if(scores[i]>=60){
+//     sum60=sum60+scores[i]
+//   }
+
+
+
+//   let result = checkResult(scores[i])
+//   console.log(result)
+// }
+
+
+// console.log("less than 40 scores:",lessThan40)
+// console.log("sum of greater or equal to 60:",sum60)
+
+
+
+
+
+// let amount = [699, 540, 345, 1800, 2200, 900]
+// let count500 = 0;
+// let sum1000 = 0
+
+
+// function checkOrder(order) {
+//   if (order >= 1200) {
+//     return "premium order";
+//   }
+//   else if (order >= 600) {
+//     return "standard order";
+//   }
+//   else {
+//     return "small order";
+//   }
+// }
+
+// for (let i = 0; i < amount.length; i++) {
+//   console.log(amount[i]);
+
+//   if (amount[i] < 500) {
+//     count500 = count500 + 1;
+//   }
+
+//   if (amount[i] >= 1000) {
+//     sum1000 = sum1000 + amount[i];
+//   }
+//   let type = checkOrder(amount[i])
+//   console.log(type)
+// }
+
+// console.log("count of amount smaller than 500 =",count500)
+// console.log("sum of amount greater or equal to 1000 =",sum1000)
+
+
+
+
+
+
+let names = ["Aman", "Sara", "Rahul", "Zoya", "Kabir"];
+let marks = [78, 32, 91, 55, 39];
+let count40 = 0;
+let sum70 = 0;
+
+function checkGrade(mark) {
+  if (mark >= 80) {
+    return "Excellent";
   }
-  else{
-    return "fail"
+  else if (mark >= 60) {
+    return "Good";
+  }
+  else if (mark >= 40) {
+    return "Pass";
+  }
+  else {
+    return "Fail";
   }
 }
 
-for (let i = 0; i < scores.length; i++) {
-  console.log(scores[i])
+for (let i = 0; i < names.length; i++) {
 
-  if(scores[i]<40){
-    lessThan40=lessThan40+1
+  if (marks[i] < 40) {
+    count40 = count40 + 1
   }
 
-  if(scores[i]>=60){
-    sum60=sum60+scores[i]
+  if (marks[i] >= 70) {
+    sum70 = sum70 + marks[i]
   }
 
-
-
-  let result = checkResult(scores[i])
-  console.log(result)
+  let result = checkGrade(marks[i]);
+  console.log(names[i], marks[i],result)
 }
 
-
-console.log("less than 40 scores:",lessThan40)
-console.log("sum of greater or equal to 60:",sum60)
+console.log("Marks below 40 =", count40);
+console.log("Sum of 70+ marks =", sum70);
