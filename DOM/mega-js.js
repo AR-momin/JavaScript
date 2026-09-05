@@ -78,23 +78,86 @@ for (let i = 0; i < products.length; i++) {
 
   // part 5
   let div = document.createElement("div")
-  div.innerHTML = `<h3>${products[i]}</h3>
-  <p>${prices[i]}</p>
-  <p>${ratings[i]}</p>
-  <p>${category}</p>
-  <p>${rating}</p>`
+  div.innerHTML = `
+  <h3>${products[i]}</h3>
+  <p>Price: ₹${prices[i]}</p>
+  <p>Rating: ${ratings[i]}</p>
+  <p>Category: ${category}</p>
+  <p>Review: ${rating}</p>
+`;
   div.style.backgroundColor = color
   document.querySelector(".products").append(div)
-console.log(products[i],prices)
-  // part 6
-  function getRandomDiscount() {
-    let dis = Math.floor(Math.random() * 16) + 5
-
-    return dis
-  }
+  console.log(products[i], prices[i], ratings[i])
 
   let discount = getRandomDiscount()
-  let finalPrice = prices[i] - (prices[i]*discount/100)
-  console.log(finalPrice)
+  let finalPrice = prices[i] - (prices[i] * discount / 100)
+  div.insertAdjacentHTML(
+    "beforeend",
+    `<p>Discount: ${discount}%</p>
+   <p>Final Price: ${finalPrice}</p>`
+  );
+
 }
 
+function getRandomDiscount() {
+  let dis = Math.floor(Math.random() * 16) + 5
+
+  return dis
+}
+
+
+
+
+let increasedPrices = prices.map(e => {
+  return e + (e * 10 / 100)
+})
+console.log("original prices:", prices)
+console.log("increased prices:", increasedPrices)
+
+
+
+
+let greaterThan10000 = increasedPrices.filter(e => {
+  return e >= 10000
+})
+console.log("Increased Prices More Than 10000:", greaterThan10000)
+
+
+
+let sumOfGreaterThan10000 = greaterThan10000.reduce((a, b) => {
+  return a + b
+})
+console.log("Total of 10000+ Prices:", sumOfGreaterThan10000)
+
+
+
+let lessThan5000 = 0
+let rating4Plus = 0
+let totalPrices = 0
+let highestPrice = prices[0]
+let lowestPrice = prices[0]
+for (let i = 0; i < products.length; i++) {
+  if (prices[i] < 5000) {
+    lessThan5000 = lessThan5000 + 1
+  }
+
+  if (ratings[i] > 4) {
+    rating4Plus = rating4Plus + 1
+  }
+
+  totalPrices = totalPrices + prices[i]
+
+  if(prices[i]>highestPrice){
+    highestPrice = prices[i]
+  }
+
+  if(prices[i]<lowestPrice){
+    lowestPrice = prices[i]
+  }
+}
+
+  console.log("less than 5000 products:",lessThan5000)
+  console.log("greater than 4 ratings:",rating4Plus)
+  console.log("Total price of original array:",totalPrices)
+  console.log("highest price in the original array",highestPrice)
+  console.log("lowest price in the original array",lowestPrice)
