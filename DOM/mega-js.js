@@ -147,17 +147,85 @@ for (let i = 0; i < products.length; i++) {
 
   totalPrices = totalPrices + prices[i]
 
-  if(prices[i]>highestPrice){
+  if (prices[i] > highestPrice) {
     highestPrice = prices[i]
   }
 
-  if(prices[i]<lowestPrice){
+  if (prices[i] < lowestPrice) {
     lowestPrice = prices[i]
   }
 }
 
-  console.log("less than 5000 products:",lessThan5000)
-  console.log("greater than 4 ratings:",rating4Plus)
-  console.log("Total price of original array:",totalPrices)
-  console.log("highest price in the original array",highestPrice)
-  console.log("lowest price in the original array",lowestPrice)
+console.log("less than 5000 products:", lessThan5000)
+console.log("greater than 4 ratings:", rating4Plus)
+console.log("Total price of original array:", totalPrices)
+console.log("highest price in the original array", highestPrice)
+console.log("lowest price in the original array", lowestPrice)
+
+
+
+
+prices.forEach((price, index) => {
+  console.log(index, price)
+});
+
+
+
+
+for (const element of products) {
+  console.log(element)
+}
+
+
+
+let store = {
+  name:"TechZone",
+  totalProducts:products.length,
+  owner:"Admin",
+  totalValue:totalPrices
+}
+
+console.log(store)
+
+
+
+
+
+
+console.log(store.name.toUpperCase())
+console.log(store.name.toLowerCase())
+console.log(store.name.length)
+console.log(store.name.slice(0,4))
+console.log(store.name.slice(store.name.length-3))
+
+
+
+
+let div = document.createElement("div")
+div.innerHTML = `
+<p>Total Products:${products.length}</p>
+<p>Budget Products:${lessThan5000}</p>
+<p>4+ Rated Products:${rating4Plus}</p>
+<p>Total Inventory Value:${totalPrices}</p>
+<p>Highest Price:${highestPrice}</p>
+<p>Lowest Price:${lowestPrice}</p>`
+
+document.querySelector(".stats").append(div)
+
+
+
+document.querySelector(".products").prepend("Featured Products")
+document.querySelector(".products").append("End of Products")
+document.querySelector(".products").before("Product Section Starts")
+document.querySelector(".products").after("Product Section Ends")
+
+
+
+
+let stats = document.querySelector(".stats")
+stats.insertAdjacentHTML("afterbegin",
+  "<p>Store Statistics</p>"
+)
+stats.insertAdjacentHTML("beforeend",
+  "<p>Statistics Complete</p>"
+)
