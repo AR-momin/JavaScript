@@ -86,6 +86,9 @@ for (let i = 0; i < products.length; i++) {
   <p>Review: ${rating}</p>
 `;
   div.style.backgroundColor = color
+  if (products[i] == "Mouse") {
+    div.classList.add("mouseCard")
+  }
   document.querySelector(".products").append(div)
   console.log(products[i], prices[i], ratings[i])
 
@@ -98,6 +101,7 @@ for (let i = 0; i < products.length; i++) {
   );
 
 }
+document.querySelector(".mouseCard").remove()
 
 function getRandomDiscount() {
   let dis = Math.floor(Math.random() * 16) + 5
@@ -179,10 +183,10 @@ for (const element of products) {
 
 
 let store = {
-  name:"TechZone",
-  totalProducts:products.length,
-  owner:"Admin",
-  totalValue:totalPrices
+  name: "TechZone",
+  totalProducts: products.length,
+  owner: "Admin",
+  totalValue: totalPrices
 }
 
 console.log(store)
@@ -195,8 +199,8 @@ console.log(store)
 console.log(store.name.toUpperCase())
 console.log(store.name.toLowerCase())
 console.log(store.name.length)
-console.log(store.name.slice(0,4))
-console.log(store.name.slice(store.name.length-3))
+console.log(store.name.slice(0, 4))
+console.log(store.name.slice(store.name.length - 3))
 
 
 
@@ -229,3 +233,47 @@ stats.insertAdjacentHTML("afterbegin",
 stats.insertAdjacentHTML("beforeend",
   "<p>Statistics Complete</p>"
 )
+
+
+
+
+
+let special = document.querySelector(".special")
+function getRandomMarks(){
+  let m = Math.floor(Math.random()*100)+1
+  return m;
+}
+
+function getRandomBackgroundColor(){
+  let v1 = Math.ceil(Math.random()*255)
+  let v2 = Math.ceil(Math.random()*255)
+  let v3 = Math.ceil(Math.random()*255)
+  return `rgb(${v1},${v2},${v3})`
+}
+
+function checkResult(mark){
+  if (mark>=40){
+    return "Pass"
+  }
+  else{
+    return "Fail"
+  }
+}
+
+for (let i = 0; i < 4; i++) {
+  let box = document.createElement("div")
+  let mark = getRandomMarks()
+  let result = checkResult(mark)
+
+  box.innerHTML = `Marks: ${mark} - ${result}`
+  box.style.backgroundColor = getRandomBackgroundColor()
+
+  if(result == "Pass"){
+    box.style.color = "green"
+  }
+  else{
+    box.style.color = "red"
+  }
+  special.append(box)
+}
+
