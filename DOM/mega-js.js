@@ -277,3 +277,28 @@ for (let i = 0; i < 4; i++) {
   special.append(box)
 }
 
+
+
+
+let num = products.length;
+let fact = 1;
+
+for (let i = 1; i <= num; i++) {
+  fact = fact * i;
+}
+
+console.log("Factorial using Loop:", fact);
+
+
+
+let arr = [];
+
+for (let i = 1; i <= products.length; i++) {
+  arr.push(i);
+}
+
+let factorial = arr.reduce((a, b) => {
+  return a * b;
+});
+
+console.log("Factorial using Reduce:", factorial);
