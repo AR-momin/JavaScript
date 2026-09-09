@@ -42,18 +42,62 @@
 let names = ["Laptop", "Mouse", "Keyboard"];
 let prices = [55000, 1200, 3500];
 
-function getRandomBackgroundColor(){
-  let v1 = Math.ceil(Math.random()*255)
-  let v2 = Math.ceil(Math.random()*255)
-  let v3 = Math.ceil(Math.random()*255)
+function getRandomBackgroundColor() {
+  let v1 = Math.ceil(Math.random() * 255)
+  let v2 = Math.ceil(Math.random() * 255)
+  let v3 = Math.ceil(Math.random() * 255)
   return `rgb(${v1},${v2},${v3})`
 }
 
 for (let i = 0; i < names.length; i++) {
-let div = document.createElement("div")
-let bgColor = getRandomBackgroundColor()
-div.innerHTML = `<h3>${names[i]}</h3>
+  let div = document.createElement("div")
+  let bgColor = getRandomBackgroundColor()
+  div.innerHTML = `<h3>${names[i]}</h3>
 <p>Price:${prices[i]}</p>`
-div.style.backgroundColor = bgColor
-document.querySelector(".product").append(div)
+  div.style.backgroundColor = bgColor
+  document.querySelector(".product").append(div)
+}
+
+
+
+
+function getRandomMarks() {
+  let m = Math.floor(Math.random() * 100) + 1
+  return m;
+}
+
+function getRandomBackgroundColor() {
+  let v1 = Math.ceil(Math.random() * 255)
+  let v2 = Math.ceil(Math.random() * 255)
+  let v3 = Math.ceil(Math.random() * 255)
+  return `rgb(${v1},${v2},${v3})`
+}
+
+
+function checkResult(mark) {
+  if (mark >= 40) {
+    return "Pass"
+  }
+  else {
+    return "Fail"
+  }
+}
+
+
+for (let i = 0; i < 4; i++) {
+  let div = document.createElement("div")
+  let bgColor = getRandomBackgroundColor()
+  let marks = getRandomMarks()
+  let result = checkResult(marks)
+
+  div.innerHTML = `Marks:${marks} - ${result}`
+  div.style.backgroundColor = bgColor
+
+  if (result == "Pass") {
+    div.style.color = "green"
+  }
+  else {
+    div.style.color = "red"
+  }
+  document.querySelector(".results").append(div)
 }
