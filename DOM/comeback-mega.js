@@ -51,8 +51,13 @@ for (let i = 0; i < names.length; i++) {
   Performance: ${performance} <br>
   Attendance: ${Attendance}%`
 
+  
   div.style.backgroundColor = bgColor
   document.querySelector(".students").append(div)
+  
+  if(names[i] == "Sara"){
+    div.classList.add("remove")
+  }
 
   if(result == "Pass"){
     div.style.color = "green"
@@ -60,7 +65,9 @@ for (let i = 0; i < names.length; i++) {
   else{
     div.style.color = "red"
   }
+
 }
+ document.querySelector(".remove").remove()
 
 
 let newMarks = marks.map(e=>{
@@ -116,3 +123,26 @@ console.log("Passed Students:",passStd)
 console.log("Failed Students:",failStd)
 console.log("Highest Mark:",highest)
 console.log("Lowest Mark:",lowest)
+
+
+
+
+
+let box = document.createElement("div")
+box.innerHTML = `Total Students: ${names.length} <br>
+Pass Students: ${passStd} <br>
+Fail Students: ${failStd} <br>
+Highest Marks: ${highest} <br>
+Lowest Marks: ${lowest} <br>
+Total Marks: ${sum}`
+
+document.querySelector(".stats").append(box)
+
+
+
+
+let std = document.querySelector(".students")
+std.insertAdjacentHTML("afterbegin","<p>Student Results</p>")
+std.insertAdjacentHTML("beforeend","<p>End of Results</p>")
+
+document.querySelector(".stats").insertAdjacentHTML("beforeend","<p>Statistics Complete</p>")
