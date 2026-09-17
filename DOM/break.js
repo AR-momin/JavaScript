@@ -68,14 +68,122 @@
 
 
 
-function checkResult(name,mark){
-  if(mark>=40){
-    return `${name} : Pass`
+// function checkResult(name,mark){
+//   if(mark>=40){
+//     return `${name} : Pass`
+//   }
+//   else{
+//     return `${name} : Fail`
+//   }
+// }
+
+// let result = checkResult("Akhtar",94)
+// console.log(result)
+
+
+
+
+
+
+
+// function checkOperation(a,b,opt){
+  // if(opt == "+"){
+  //   return a+b
+  // }
+  // else if(opt == "-"){
+  //   return a-b
+  // }
+  // else if(opt == "*"){
+  //   return a*b
+  // }
+  // else if(opt == "/"){
+  //   return a/b
+  // }
+  // else{
+  //   return "Invalid Operator"
+  // }
+// }
+// let operation = checkOperation(7,9,"*")
+// console.log(operation)
+
+
+
+
+
+
+
+
+// function faultyCalci(a,b,opt){
+//   let rand = Math.random()
+//   if(rand<0.1){
+//     if(opt == "+"){
+//       return a-b
+//     }
+//     else if(opt == "-"){
+//       return a+b
+//     }
+//     else if(opt == "*"){
+//       return a/b
+//     }
+//     else if(opt == "/"){
+//       return a*b
+//     }
+//     else{
+//     return "Invalid Operator"
+//   }
+//   }
+//   else{
+//     if(opt == "+"){
+//     return a+b
+//   }
+//   else if(opt == "-"){
+//     return a-b
+//   }
+//   else if(opt == "*"){
+//     return a*b
+//   }
+//   else if(opt == "/"){
+//     return a/b
+//   }
+//   else{
+//     return "Invalid Operator"
+//   }
+//   }
+// }
+
+// let operation = faultyCalci(9,5,"*")
+// console.log(operation)
+
+
+
+
+
+function convertTemp(value, type){
+  let rand =Math.random()
+
+  if(rand<0.3){
+    if(type == "c"){
+      return value+20
+    }
+    else if(type == "f"){
+      return value-20
+    }
+    else{
+      return "Invalid type"
+    }
   }
   else{
-    return `${name} : Fail`
+    if(type == "c"){
+      return (value * 9/5) + 32
+    }
+    else if(type == "f"){
+      return (value - 32) * 5/9
+    }
+    else{
+      return "Invalid type"
+    }
   }
 }
 
-let result = checkResult("Akhtar",94)
-console.log(result)
+let temp = convertTemp(40,"c")
+console.log(temp)
