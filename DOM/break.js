@@ -87,21 +87,21 @@
 
 
 // function checkOperation(a,b,opt){
-  // if(opt == "+"){
-  //   return a+b
-  // }
-  // else if(opt == "-"){
-  //   return a-b
-  // }
-  // else if(opt == "*"){
-  //   return a*b
-  // }
-  // else if(opt == "/"){
-  //   return a/b
-  // }
-  // else{
-  //   return "Invalid Operator"
-  // }
+// if(opt == "+"){
+//   return a+b
+// }
+// else if(opt == "-"){
+//   return a-b
+// }
+// else if(opt == "*"){
+//   return a*b
+// }
+// else if(opt == "/"){
+//   return a/b
+// }
+// else{
+//   return "Invalid Operator"
+// }
 // }
 // let operation = checkOperation(7,9,"*")
 // console.log(operation)
@@ -194,29 +194,98 @@
 
 
 
-let price = 2500
-let quantity = 4
+// let price = 2500
+// let quantity = 4
 
 
-let total = price*quantity
+// let total = price*quantity
 
-let discount = 0
-if(total>=10000){
-  discount = 15
+// let discount = 0
+// if(total>=10000){
+//   discount = 15
+// }
+// else if(total>=5000){
+//   discount = 10
+// }
+// else{
+//   discount = 0
+// }
+
+// function checkBill(total,discount){
+//   return total - (total*discount/100 )
+// }
+
+// let finalPrice = checkBill(total,discount)
+
+// console.log(`Original Price: ${total}`)
+// console.log(`Discount: ${discount}%`)
+// console.log(`After Applying Discount: ${finalPrice}`)
+
+
+
+
+
+
+
+
+// let products = ["Laptop", "Mouse", "Keyboard", "Monitor"]
+// let stocks = [3, 0, 12, 5]
+// let prices = [55000, 1200, 3500, 18000]
+
+// function checkStocks(stk) {
+//   if (stk >= 6) {
+//     return "In Stock"
+//   }
+//   else if (stk >= 1) {
+//     return "Low Stock"
+//   }
+//   else {
+//     return "Out Of Stock"
+//   }
+// }
+// let totalInventoryValue = 0
+// for (let i = 0; i < products.length; i++) {
+//   let stock = checkStocks(stocks[i])
+
+//   console.log(`${products[i]} - ${stock} - ${prices[i]}`)
+
+//   let inventoryvalue = stocks[i] * prices[i]
+//   totalInventoryValue =  totalInventoryValue + inventoryvalue 
+// }
+
+// console.log(`Total Inventory Value: ${totalInventoryValue}`)
+
+
+
+
+
+
+
+
+let products = ["Laptop", "Mouse", "Keyboard", "Monitor"]
+let prices = [55000, 1200, 3500, 18000]
+
+let newPrices = prices.map(e=>{
+  return e+(e*10/100)
+})
+
+let updatedPrices = (e=>{
+  if(e>=5000){
+    return true
+  }
+  else{
+    return false
+  }
+})
+let filter = newPrices.filter(updatedPrices)
+
+let total = ((a,b)=> a+b)
+let sum = newPrices.reduce(total,0)
+
+console.log(`Updated Prices: ${newPrices}`)
+console.log(`Premium Prices: ${filter}`)
+console.log(`Total Updated Value: ${sum}`)
+
+for (let i = 0; i < products.length; i++) {
+  console.log(`${products[i]} - ${newPrices[i]}`)
 }
-else if(total>=5000){
-  discount = 10
-}
-else{
-  discount = 0
-}
-
-function checkBill(total,discount){
-  return total - (total*discount/100 )
-}
-
-let finalPrice = checkBill(total,discount)
-
-console.log(`Original Price: ${total}`)
-console.log(`Discount: ${discount}%`)
-console.log(`After Applying Discount: ${finalPrice}`)
