@@ -158,32 +158,65 @@
 
 
 
-function convertTemp(value, type){
-  let rand =Math.random()
+// function convertTemp(value, type){
+//   let rand =Math.random()
 
-  if(rand<0.3){
-    if(type == "c"){
-      return value+20
-    }
-    else if(type == "f"){
-      return value-20
-    }
-    else{
-      return "Invalid type"
-    }
-  }
-  else{
-    if(type == "c"){
-      return (value * 9/5) + 32
-    }
-    else if(type == "f"){
-      return (value - 32) * 5/9
-    }
-    else{
-      return "Invalid type"
-    }
-  }
+//   if(rand<0.3){
+//     if(type == "c"){
+//       return value+20
+//     }
+//     else if(type == "f"){
+//       return value-20
+//     }
+//     else{
+//       return "Invalid type"
+//     }
+//   }
+//   else{
+//     if(type == "c"){
+//       return (value * 9/5) + 32
+//     }
+//     else if(type == "f"){
+//       return (value - 32) * 5/9
+//     }
+//     else{
+//       return "Invalid type"
+//     }
+//   }
+// }
+
+// let temp = convertTemp(40,"c")
+// console.log(temp)
+
+
+
+
+
+
+
+let price = 2500
+let quantity = 4
+
+
+let total = price*quantity
+
+let discount = 0
+if(total>=10000){
+  discount = 15
+}
+else if(total>=5000){
+  discount = 10
+}
+else{
+  discount = 0
 }
 
-let temp = convertTemp(40,"c")
-console.log(temp)
+function checkBill(total,discount){
+  return total - (total*discount/100 )
+}
+
+let finalPrice = checkBill(total,discount)
+
+console.log(`Original Price: ${total}`)
+console.log(`Discount: ${discount}%`)
+console.log(`After Applying Discount: ${finalPrice}`)
