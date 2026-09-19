@@ -143,5 +143,24 @@ button.addEventListener("click",e=>{
   e.stopPropagation()
   setTimeout(() => {
     msg.innerHTML = ""
-  }, 5000);
+  }, 3000);
 })
+
+
+
+
+
+
+
+let offer = document.getElementById("timer")
+let count = 10
+let interval = setInterval(() => {
+  count = count - 1
+  if(count == 0){
+    offer.innerHTML = "Offer Expired"
+    clearInterval(interval)
+  }
+  else{
+    offer.innerHTML = `Offer Ends In: ${count}`
+  }
+}, 1000);
