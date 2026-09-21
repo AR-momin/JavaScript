@@ -129,14 +129,178 @@
 
 
 
-function recieveUsername(name){
-  console.log(`login Succesful: ${name}`)
+// function recieveUsername(name){
+//   console.log(`login Succesful: ${name}`)
+// }
+
+// function checkLogin(callback){
+//   console.log(`Checking Login...`)
+//   setTimeout(() => {
+//     callback("Akhtar")
+//   }, 2000);
+// }
+// checkLogin(recieveUsername)
+
+
+
+
+
+
+
+// function fileUploaded(name){
+//   console.log(`Upload Complete: ${name}`)
+// }
+
+// function procesFile(callback){
+//   console.log(`Uploading File...`)
+//   setTimeout(() => {
+//     callback("resume.pdf")
+//   }, 4000);
+// }
+// procesFile(fileUploaded)
+
+
+
+
+
+
+
+// function receiveUserData(name,age){
+//   console.log(`User Loaded: ${name} - Age: ${age}`)
+// }
+
+// function loadedUserData(callback){
+//   console.log(`Loading User...`)
+//   setTimeout(() => {
+//     callback("Akhtar",19)
+//   }, 2000);
+// }
+// loadedUserData(receiveUserData)
+
+
+
+
+
+
+
+
+// function receivePayment(amount,status){
+//   console.log(`Payment Status: ${amount} - ${status}`)
+// }
+
+// function verifyingPayment(callback){
+//   console.log(`Verifying Payment...`)
+//   setTimeout(() => {
+//     callback(2500,"Success")
+//   }, 3000);
+// }
+// verifyingPayment(receivePayment)
+
+
+
+
+
+
+
+
+// function shoeDelivery(product,status){
+// console.log(`Delivery Update: ${product} - ${status}`)
+// }
+// function checkOrderStatus(callback){
+//   console.log(`Checking Order Status...`)
+//   setTimeout(() => {
+//     callback("Laptop","shipped")
+//   }, 2000);
+// }
+// checkOrderStatus(shoeDelivery)
+
+
+
+
+
+// function showResult(product,stock){
+//   if(stock>0){
+//     console.log(`${product} is available. Order Confirmed!`)
+//   }
+//   else{
+//     console.log(`${product} is Out of Stock`)
+//   }
+// }
+// function processOrder(callback){
+//   console.log(`Checking Product...`)
+//   setTimeout(() => {
+//     callback("Laptop",3)
+//   }, 2000);
+// }
+// processOrder(showResult)
+
+
+
+
+
+
+
+// function showPayment(amount,status){
+//  console.log(`Payment of ${amount} ${status}`)
+// }
+// function processPayment(callback){
+//   console.log(`Verifying Payment...`)
+//   let rand = Math.random()
+//   let status 
+//   if(rand>0.2){
+//     status = "Successful"
+//   }
+//   else{
+//     status = "Failed"
+//   }
+//   setTimeout(() => {
+//     callback(5000,status)
+//   }, 2000);
+// }
+// processPayment(showPayment)
+
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+// function loaded(name){
+//   console.log(`Script Loaded Successfully! ${name}`)
+// }
+
+// loadScript("extra.js",loaded)
+
+
+
+
+
+
+
+function loadScript(src, callback){
+  let script = document.createElement("script")
+
+  script.src = src
+
+  script.onload = () => {
+    callback(src)
+  }
+
+  document.head.append(script)
 }
 
-function checkLogin(callback){
-  console.log(`Checking Login...`)
-  setTimeout(() => {
-    callback("Akhtar")
-  }, 2000);
+function showStatus(name){
+  document.getElementById("status").innerHTML =
+    `${name} loaded successfully!`
 }
-checkLogin(recieveUsername)
+
+loadScript("extra.js", showStatus)
