@@ -286,21 +286,81 @@
 
 
 
-function loadScript(src, callback){
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function showStatus(name){
+//   document.getElementById("status").innerHTML = `${name} loaded successfully!`
+// }
+// loadScript("extra.js",showStatus)
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function showName(name){
+//   document.getElementById("title").innerHTML = `Theme Ready`
+//   document.getElementById("status").innerHTML = `${name} load successfully!`
+//   document.getElementById("status").style.backgroundColor = "lightgreen"
+// }
+// loadScript("theme.js",showName)
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function showAppStatus(name){
+//   document.getElementById("heading").innerHTML = `App Ready`
+//   document.getElementById("message").innerHTML = `${name} is ready`
+//   document.getElementById("message").style.color = "green"
+// }
+// loadScript("app.js",showAppStatus)
+
+
+
+
+
+
+
+function loadScript(src,callback){
   let script = document.createElement("script")
-
   script.src = src
-
-  script.onload = () => {
+  script.onload = ()=>{
     callback(src)
   }
-
   document.head.append(script)
 }
 
 function showStatus(name){
-  document.getElementById("status").innerHTML =
-    `${name} loaded successfully!`
+  document.getElementById("status").insertAdjacentHTML("beforeend", `${name} loaded successfully<br>`)
 }
-
-loadScript("extra.js", showStatus)
+loadScript("navbar.js",showStatus)
+loadScript("footer.js",showStatus)

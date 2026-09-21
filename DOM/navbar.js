@@ -1,0 +1,1 @@
+console.log("Navbar script running")
