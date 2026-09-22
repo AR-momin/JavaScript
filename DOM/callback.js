@@ -350,17 +350,80 @@
 
 
 
-function loadScript(src,callback){
-  let script = document.createElement("script")
-  script.src = src
-  script.onload = ()=>{
-    callback(src)
-  }
-  document.head.append(script)
-}
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
 
-function showStatus(name){
-  document.getElementById("status").insertAdjacentHTML("beforeend", `${name} loaded successfully<br>`)
-}
-loadScript("navbar.js",showStatus)
-loadScript("footer.js",showStatus)
+// function showStatus(name){
+//   document.getElementById("status").insertAdjacentHTML("beforeend", `${name} loaded successfully<br>`)
+// }
+// loadScript("navbar.js",showStatus)
+// loadScript("footer.js",showStatus)
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+// function checkStatus(name){
+//   document.getElementById("title").innerHTML = `Checkout Ready`
+//   document.getElementById("status").innerHTML = `${name} loaded successfully`
+//   document.getElementById("status").style.backgroundColor = "green"
+//   document.getElementById("status").style.Color = "lightgray"
+// }
+// loadScript("checkout.js",checkStatus)
+
+
+
+
+
+
+
+
+// function loadScript(src, callback) {
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = () => {
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+// let count = 0
+// function updateStatus(name) {
+//   if (name == "analytics.js") {
+//     document.getElementById("analyticsStatus").innerHTML = `Analytics: Ready`
+//   }
+//   else {
+//     document.getElementById("ordersStatus").innerHTML = `Orders: Ready`
+//   }
+//   count = count + 1
+//   if (count == 2) {
+//     document.getElementById("heading").innerHTML = "Admin Panel Ready"
+//     document.getElementById("heading").style.backgroundColor = "lightgreen"
+//   }
+// }
+
+// loadScript("analytics.js",updateStatus)
+// loadScript("orders.js",updateStatus)
+
+
+
+
+
+
+
+
