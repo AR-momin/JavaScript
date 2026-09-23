@@ -427,3 +427,122 @@
 
 
 
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function updateStatus(name){
+//   document.getElementById("heading").innerHTML = `Music Player Ready`
+//   document.getElementById("status").innerHTML = `${name} loaded successfully`
+//   document.getElementById("status").style.color = "blue"
+// }
+
+// let btn = document.getElementById("loadMusic")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = "Loading Player..."
+//   loadScript("music.js",updateStatus)
+// })
+
+
+
+
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function updateStatus(name){
+//   document.getElementById("heading").innerHTML = "Profile Ready"
+//   document.getElementById("status").innerHTML = `${name} loaded successfully`
+//   document.getElementById("status").style.color = `green`
+//   document.getElementById("status").style.backgroundColor = `lightgray`
+// }
+
+// let btn = document.getElementById("loadProfile")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Loading Profile...`
+//   loadScript("profile.js",updateStatus)
+// })
+
+
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function updateStatus(name){
+//   document.getElementById("heading").innerHTML = `Notifications Ready`
+//   document.getElementById("status").innerHTML = `${name} enabled successfully`
+//   document.getElementById("status").style.color = `green`
+//   setTimeout(() => {
+//   document.getElementById("status").innerHTML= `Notification Active`
+//   }, 2000);
+// }
+
+// let btn = document.getElementById("loadNotification")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Enabling Notifications...`
+//     loadScript("notification.js",updateStatus)
+
+// })
+
+
+
+
+
+
+
+
+function loadScript(src,callback){
+  let script = document.createElement("script")
+  script.src = src
+  script.onload = ()=>{
+    callback(src)
+  }
+  document.head.append(script)
+}
+
+function updateStatus(name){
+  document.getElementById("heading").innerHTML= `Search Ready`
+  document.getElementById("status").innerHTML= `${name} loaded successfully`
+  document.getElementById("status").style.color= `blue`
+
+  setTimeout(() => {
+    document.getElementById("status").innerHTML= `Search Active`
+  }, 3000);
+}
+
+let btn = document.getElementById("loadSearch")
+btn.addEventListener("click",()=>{
+  document.getElementById("status").innerHTML = `Loading Search...`
+  setTimeout(() => {
+    loadScript("search.js",updateStatus)
+  }, 1500);
+})
