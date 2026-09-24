@@ -575,29 +575,156 @@
 
 
 
-function loadScript(src,callback){
-  let sc = document.createElement("script")
-  sc.src = src
-  sc.onload = ()=>{
-    callback(src)
+// function loadScript(src,callback){
+//   let sc = document.createElement("script")
+//   sc.src = src
+//   sc.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(sc)
+// }
+
+// function paymentReady(name){
+//   document.getElementById("heading").innerHTML = `Payment Ready`
+//   document.getElementById("status").innerHTML = `${name} loaded successfully`
+//   document.getElementById("status").style.color = `green`
+
+//   setTimeout(() => {
+//     document.getElementById("status").innerHTML = `Payment System Active`
+//   }, 2000);
+// }
+
+// let btn = document.getElementById("payBtn")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Processing Payment...`
+//   setTimeout(() => {
+//     loadScript("payment.js",paymentReady)
+//   }, 1500);
+// })
+
+
+
+
+
+
+// let movie = "Interstellar"
+// let seats = 2
+
+// function ticketConfirmed(movie,seats){
+//   console.log(`Booking Confirmed: ${movie} - ${seats} Seats`)
+// }
+
+// function ticketsBooking(callback){
+//   console.log(`Booking Tickets...`)
+//   setTimeout(() => {
+//     callback(movie,seats)
+//   }, 2000);
+// }
+// ticketsBooking(ticketConfirmed)
+
+
+
+
+
+
+
+
+
+// let productName = "Wireless Keyboard"
+// let price = 2500
+
+// function confirmOrder(productName,price){
+//   document.getElementById("heading").innerHTML = `Order Confirmed`
+//   document.getElementById("status").innerHTML = `${productName} ordered successfully - ₹${price}`
+//   document.getElementById("status").style.color = `green`
+
+//   setTimeout(() => {
+//     document.getElementById("status").innerHTML = `Thank you for your order!`
+//   }, 3000);
+// }
+
+// function processOrder(callback){
+//   setTimeout(() => {
+//     callback(productName,price)
+//   }, 2000);
+// }
+
+// let btn = document.getElementById("orderBtn")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Processing Order...`
+//   processOrder(confirmOrder)
+// })
+
+
+
+
+
+
+
+
+let orderTotal = 6000
+let coupon = "SAVE10"
+function couponApply(orderTotal, coupon) {
+  if (coupon == "SAVE10") {
+    let dis = orderTotal * 10 / 100
+    let finalPrice;
+    finalPrice = orderTotal - dis
+    document.getElementById("status").style.color = "green"
+    document.getElementById("heading").innerHTML = `Coupon Applied`
+    document.getElementById("status").innerHTML = `Discount Applied: ₹${dis} <br>
+                                                    Final Amount: ₹${finalPrice}`
   }
-  document.head.append(sc)
+  else {
+    document.getElementById("status").innerHTML = "Invalid Coupon"
+    document.getElementById("status").style.color = "red"
+
+  }
 }
 
-function paymentReady(name){
-  document.getElementById("heading").innerHTML = `Payment Ready`
-  document.getElementById("status").innerHTML = `${name} loaded successfully`
-  document.getElementById("status").style.color = `green`
-
+function appliedCoupon(callback) {
   setTimeout(() => {
-    document.getElementById("status").innerHTML = `Payment System Active`
+    callback(orderTotal, coupon)
   }, 2000);
 }
 
-let btn = document.getElementById("payBtn")
-btn.addEventListener("click",()=>{
-  document.getElementById("status").innerHTML = `Processing Payment...`
-  setTimeout(() => {
-    loadScript("payment.js",paymentReady)
-  }, 1500);
+let btn = document.getElementById("couponBtn")
+btn.addEventListener("click", () => {
+  document.getElementById("status").innerHTML = `Checking Coupon...`
+  appliedCoupon(couponApply)
 })
+
+
+
+
+
+
+
+
+
+// let orderId = "ORD101"
+// let orderStatus = "Processing"
+
+// function checkStatus(orderId,orderStatus){
+//   if(orderStatus == "Processing"){
+//     document.getElementById("heading").innerHTML = `Order Cancelled`
+//     document.getElementById("status").innerHTML = `ORD101 cancelled successfully`
+//     document.getElementById("status").style.color = `green`
+//   }
+//   else{
+//     document.getElementById("heading").innerHTML = `Cancellation Failed`
+//     document.getElementById("status").innerHTML = `ORD101 cannot be cancelled`
+//     document.getElementById("status").style.color = `red`
+//   }
+// }
+
+// function showOrder(callback){
+//     callback(orderId,orderStatus)
+// }
+
+// let btn = document.getElementById("cancelBtn")
+// btn.addEventListener("click",()=>{
+//   setTimeout(() => {
+//     document.getElementById("status").innerHTML = `Checking Order...`
+//   }, 2000);
+//   checkStatus(showOrder)
+// })
