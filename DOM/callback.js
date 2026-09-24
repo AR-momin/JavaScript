@@ -520,29 +520,84 @@
 
 
 
+// function loadScript(src,callback){
+//   let script = document.createElement("script")
+//   script.src = src
+//   script.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(script)
+// }
+
+// function updateStatus(name){
+//   document.getElementById("heading").innerHTML= `Search Ready`
+//   document.getElementById("status").innerHTML= `${name} loaded successfully`
+//   document.getElementById("status").style.color= `blue`
+
+//   setTimeout(() => {
+//     document.getElementById("status").innerHTML= `Search Active`
+//   }, 3000);
+// }
+
+// let btn = document.getElementById("loadSearch")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Loading Search...`
+//   setTimeout(() => {
+//     loadScript("search.js",updateStatus)
+//   }, 1500);
+// })
+
+
+
+
+
+
+
+// let service = "AC Repair"
+// let amount = 1500
+
+// function confirmBooking(service,amount){
+//   console.log(`Booking Confirmed: ${service} - ₹${amount}`)
+// }
+
+// function processBooking(callback){
+//   console.log(`Processing Booking...`)
+
+//   setTimeout(() => {
+//     callback(service,amount)
+//   }, 2000);
+// }
+// processBooking(confirmBooking)
+
+
+
+
+
+
+
 function loadScript(src,callback){
-  let script = document.createElement("script")
-  script.src = src
-  script.onload = ()=>{
+  let sc = document.createElement("script")
+  sc.src = src
+  sc.onload = ()=>{
     callback(src)
   }
-  document.head.append(script)
+  document.head.append(sc)
 }
 
-function updateStatus(name){
-  document.getElementById("heading").innerHTML= `Search Ready`
-  document.getElementById("status").innerHTML= `${name} loaded successfully`
-  document.getElementById("status").style.color= `blue`
+function paymentReady(name){
+  document.getElementById("heading").innerHTML = `Payment Ready`
+  document.getElementById("status").innerHTML = `${name} loaded successfully`
+  document.getElementById("status").style.color = `green`
 
   setTimeout(() => {
-    document.getElementById("status").innerHTML= `Search Active`
-  }, 3000);
+    document.getElementById("status").innerHTML = `Payment System Active`
+  }, 2000);
 }
 
-let btn = document.getElementById("loadSearch")
+let btn = document.getElementById("payBtn")
 btn.addEventListener("click",()=>{
-  document.getElementById("status").innerHTML = `Loading Search...`
+  document.getElementById("status").innerHTML = `Processing Payment...`
   setTimeout(() => {
-    loadScript("search.js",updateStatus)
+    loadScript("payment.js",paymentReady)
   }, 1500);
 })
