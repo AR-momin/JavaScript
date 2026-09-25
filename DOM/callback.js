@@ -662,36 +662,36 @@
 
 
 
-let orderTotal = 6000
-let coupon = "SAVE10"
-function couponApply(orderTotal, coupon) {
-  if (coupon == "SAVE10") {
-    let dis = orderTotal * 10 / 100
-    let finalPrice;
-    finalPrice = orderTotal - dis
-    document.getElementById("status").style.color = "green"
-    document.getElementById("heading").innerHTML = `Coupon Applied`
-    document.getElementById("status").innerHTML = `Discount Applied: ₹${dis} <br>
-                                                    Final Amount: ₹${finalPrice}`
-  }
-  else {
-    document.getElementById("status").innerHTML = "Invalid Coupon"
-    document.getElementById("status").style.color = "red"
+// let orderTotal = 6000
+// let coupon = "SAVE10"
+// function couponApply(orderTotal, coupon) {
+//   if (coupon == "SAVE10") {
+//     let dis = orderTotal * 10 / 100
+//     let finalPrice;
+//     finalPrice = orderTotal - dis
+//     document.getElementById("status").style.color = "green"
+//     document.getElementById("heading").innerHTML = `Coupon Applied`
+//     document.getElementById("status").innerHTML = `Discount Applied: ₹${dis} <br>
+//                                                     Final Amount: ₹${finalPrice}`
+//   }
+//   else {
+//     document.getElementById("status").innerHTML = "Invalid Coupon"
+//     document.getElementById("status").style.color = "red"
 
-  }
-}
+//   }
+// }
 
-function appliedCoupon(callback) {
-  setTimeout(() => {
-    callback(orderTotal, coupon)
-  }, 2000);
-}
+// function appliedCoupon(callback) {
+//   setTimeout(() => {
+//     callback(orderTotal, coupon)
+//   }, 2000);
+// }
 
-let btn = document.getElementById("couponBtn")
-btn.addEventListener("click", () => {
-  document.getElementById("status").innerHTML = `Checking Coupon...`
-  appliedCoupon(couponApply)
-})
+// let btn = document.getElementById("couponBtn")
+// btn.addEventListener("click", () => {
+//   document.getElementById("status").innerHTML = `Checking Coupon...`
+//   appliedCoupon(couponApply)
+// })
 
 
 
@@ -707,24 +707,60 @@ btn.addEventListener("click", () => {
 // function checkStatus(orderId,orderStatus){
 //   if(orderStatus == "Processing"){
 //     document.getElementById("heading").innerHTML = `Order Cancelled`
-//     document.getElementById("status").innerHTML = `ORD101 cancelled successfully`
+//     document.getElementById("status").innerHTML = `${orderId} cancelled successfully`
 //     document.getElementById("status").style.color = `green`
 //   }
 //   else{
 //     document.getElementById("heading").innerHTML = `Cancellation Failed`
-//     document.getElementById("status").innerHTML = `ORD101 cannot be cancelled`
+//     document.getElementById("status").innerHTML = `${orderId} cannot be cancelled`
 //     document.getElementById("status").style.color = `red`
 //   }
 // }
 
 // function showOrder(callback){
-//     callback(orderId,orderStatus)
+//     setTimeout(() => {
+//       callback(orderId,orderStatus)
+//     }, 2000);
 // }
 
 // let btn = document.getElementById("cancelBtn")
 // btn.addEventListener("click",()=>{
-//   setTimeout(() => {
-//     document.getElementById("status").innerHTML = `Checking Order...`
-//   }, 2000);
-//   checkStatus(showOrder)
+//   document.getElementById("status").innerHTML = `Checking Order...`
+//   showOrder(checkStatus)
 // })
+
+
+
+
+
+
+
+
+
+let paymentId = "PAY501"
+let paymentStatus = "Completed"
+
+function checkStatus(paymentId,paymentStatus){
+  if(paymentStatus == "Completed"){
+    document.getElementById("heading").innerHTML = `Refund Approved`
+    document.getElementById("status").innerHTML = `${paymentId} refund initiated successfully`
+    document.getElementById("status").style.color = `green`
+  }
+  else{
+    document.getElementById("heading").innerHTML = `Refund Rejected`
+    document.getElementById("status").innerHTML = `${paymentId} is not eligible for refund`
+    document.getElementById("status").style.color = `red`
+  }
+}
+
+function completePayment(callback){
+  setTimeout(() => {
+    callback(paymentId,paymentStatus)
+  }, 2000);
+}
+
+let btn = document.getElementById("refundBtn")
+btn.addEventListener("click",()=>{
+  document.getElementById("status").innerHTML = `Checking Payment...`
+  completePayment(checkStatus)
+})
