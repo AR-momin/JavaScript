@@ -737,30 +737,88 @@
 
 
 
-let paymentId = "PAY501"
-let paymentStatus = "Completed"
+// let paymentId = "PAY501"
+// let paymentStatus = "Completed"
 
-function checkStatus(paymentId,paymentStatus){
-  if(paymentStatus == "Completed"){
-    document.getElementById("heading").innerHTML = `Refund Approved`
-    document.getElementById("status").innerHTML = `${paymentId} refund initiated successfully`
-    document.getElementById("status").style.color = `green`
-  }
-  else{
-    document.getElementById("heading").innerHTML = `Refund Rejected`
-    document.getElementById("status").innerHTML = `${paymentId} is not eligible for refund`
-    document.getElementById("status").style.color = `red`
-  }
-}
+// function checkStatus(paymentId,paymentStatus){
+//   if(paymentStatus == "Completed"){
+//     document.getElementById("heading").innerHTML = `Refund Approved`
+//     document.getElementById("status").innerHTML = `${paymentId} refund initiated successfully`
+//     document.getElementById("status").style.color = `green`
+//   }
+//   else{
+//     document.getElementById("heading").innerHTML = `Refund Rejected`
+//     document.getElementById("status").innerHTML = `${paymentId} is not eligible for refund`
+//     document.getElementById("status").style.color = `red`
+//   }
+// }
 
-function completePayment(callback){
-  setTimeout(() => {
-    callback(paymentId,paymentStatus)
-  }, 2000);
-}
+// function completePayment(callback){
+//   setTimeout(() => {
+//     callback(paymentId,paymentStatus)
+//   }, 2000);
+// }
 
-let btn = document.getElementById("refundBtn")
-btn.addEventListener("click",()=>{
-  document.getElementById("status").innerHTML = `Checking Payment...`
-  completePayment(checkStatus)
-})
+// let btn = document.getElementById("refundBtn")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Checking Payment...`
+//   completePayment(checkStatus)
+// })
+
+
+
+
+
+
+
+
+// let patient = "Aman"
+// let time = "5 PM"
+
+// function nameUpdated(patient,time){
+//   console.log(`Appointment Confirmed: ${patient} - ${time}`)
+// }
+
+// function bookingAppointment(callback){
+//   console.log(`Booking Appointment...`)
+//   setTimeout(() => {
+//     callback(patient,time)
+//   }, 2000);
+// }
+// bookingAppointment(nameUpdated)
+
+
+
+
+
+
+
+
+// function loadScript(src,callback){
+//   let sc = document.createElement("script")
+//   sc.src = src
+//   sc.onload = ()=>{
+//     callback(src)
+//   }
+//   document.head.append(sc)
+// }
+
+// function showDownloadStatu(name){
+//   document.getElementById("heading").innerHTML = `Download Ready`
+//   document.getElementById("status").innerHTML = `${name} loaded successfully`
+//   document.getElementById("status").style.color = `green`
+
+//   setTimeout(() => {
+//     document.getElementById("status").innerHTML = `Download Started`
+//   }, 2000);
+// }
+
+// let btn = document.getElementById("downloadBtn")
+// btn.addEventListener("click",()=>{
+//   document.getElementById("status").innerHTML = `Preparing Download...`
+//   loadScript("download.js",showDownloadStatu)
+// })
+
+
+
+
